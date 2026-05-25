@@ -41,12 +41,19 @@ npm run check
 
 The site includes **Élise d’Or**, a boutique AI concierge with local fallback responses.
 
-For production AI calls, deploy `ai-proxy.example.js` as a private serverless function and set:
+For production AI calls on Vercel, add these environment variables in **Project Settings -> Environment Variables**:
 
-```html
-<script>
-  window.ESRA_AI_ENDPOINT = "https://your-secure-ai-proxy.example.com";
-</script>
+```bash
+NVIDIA_API_KEY=your_rotated_nvidia_key
 ```
+
+Optional:
+
+```bash
+NVIDIA_MODEL=meta/llama-4-maverick-17b-128e-instruct
+AI_ALLOWED_ORIGIN=https://your-production-domain.com
+```
+
+The frontend calls `/api/ai`, which uses the private Vercel environment variable server-side.
 
 Never expose NVIDIA, OpenAI, or other provider API keys in browser JavaScript.

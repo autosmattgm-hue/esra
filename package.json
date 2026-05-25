@@ -6,7 +6,7 @@
   "scripts": {
     "build": "echo Static site - no build step required",
     "start": "npx serve .",
-    "check": "node --check script.js && node --check ai-proxy.example.js"
+    "check": "node --check script.js && node --check api/ai.js && node --check ai-proxy.example.js"
   },
   "keywords": [
     "luxury-fashion",

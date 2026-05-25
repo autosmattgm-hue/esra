@@ -322,7 +322,7 @@
     var input = qs("#ai-input", concierge);
     var messages = qs("[data-ai-messages]", concierge);
     var promptButtons = qsa("[data-ai-prompt]", concierge);
-    var endpoint = window.ESRA_AI_ENDPOINT || "";
+    var endpoint = window.ESRA_AI_ENDPOINT || "/api/ai";
     var conversation = [];
     var isThinking = false;
 
